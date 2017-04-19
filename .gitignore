@@ -1,0 +1,17 @@
+
+SPImem.cmx
+BuildMsg.txt
+opts.txt
+project.dep
+project.dep.bak
+project.mk
+
+*.cmx
+*.hex
+*.a
+*.o
+*.bak
+
+obj/
+output/
+
