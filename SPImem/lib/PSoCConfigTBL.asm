@@ -20,11 +20,11 @@ export LoadConfigTBL_spimem_Bank0
 export LoadConfigTBL_spimem_Ordered
 AREA lit(rom, rel)
 LoadConfigTBL_spimem_Bank0:
-;  Instance name SPIS_1, User Module SPIS
-;       Instance name SPIS_1, Block Name SPIS(DCB02)
-	db		2bh, 00h		;SPIS_1_CONTROL_REG  (DCB02CR0)
-	db		29h, 00h		;SPIS_1_TX_BUFFER_REG(DCB02DR1)
-	db		2ah, 00h		;SPIS_1_RX_BUFFER_REG(DCB02DR2)
+;  Instance name SPI, User Module SPIS
+;       Instance name SPI, Block Name SPIS(DCB02)
+	db		2bh, 00h		;SPI_CONTROL_REG  (DCB02CR0)
+	db		29h, 00h		;SPI_TX_BUFFER_REG(DCB02DR1)
+	db		2ah, 00h		;SPI_RX_BUFFER_REG(DCB02DR2)
 ;  Global Register values Bank 0
 	db		60h, 28h		; AnalogColumnInputSelect register (AMX_IN)
 	db		66h, 00h		; AnalogComparatorControl1 register (CMP_CR1)
@@ -67,11 +67,11 @@ LoadConfigTBL_spimem_Bank0:
 	db		6fh, 00h		; TMP_DR3 register (TMP_DR3)
 	db		ffh
 LoadConfigTBL_spimem_Bank1:
-;  Instance name SPIS_1, User Module SPIS
-;       Instance name SPIS_1, Block Name SPIS(DCB02)
-	db		28h, 0eh		;SPIS_1_FUNCTION_REG (DCB02FN)
-	db		29h, dch		;SPIS_1_INPUT_REG    (DCB02IN)
-	db		2ah, 14h		;SPIS_1_OUTPUT_REG   (DCB02OU)
+;  Instance name SPI, User Module SPIS
+;       Instance name SPI, Block Name SPIS(DCB02)
+	db		28h, 0eh		;SPI_FUNCTION_REG (DCB02FN)
+	db		29h, dch		;SPI_INPUT_REG    (DCB02IN)
+	db		2ah, 94h		;SPI_OUTPUT_REG   (DCB02OU)
 ;  Global Register values Bank 1
 	db		61h, 00h		; AnalogClockSelect1 register (CLK_CR1)
 	db		69h, 00h		; AnalogClockSelect2 register (CLK_CR2)

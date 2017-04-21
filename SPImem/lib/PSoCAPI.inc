@@ -14,4 +14,4 @@
 ; =============================================================================
  
 include "PSoCGPIOINT.inc"
-include "SPIS_1.inc"
+include "SPI.inc"

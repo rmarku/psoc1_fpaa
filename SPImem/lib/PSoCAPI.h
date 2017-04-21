@@ -18,6 +18,6 @@
 #define __PSOCAPI_H
 
 #include "PSoCGPIOINT.h"
-#include "SPIS_1.h"
+#include "SPI.h"
 
 #endif
