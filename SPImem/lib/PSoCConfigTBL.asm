@@ -71,7 +71,7 @@ LoadConfigTBL_spimem_Bank1:
 ;       Instance name SPI, Block Name SPIS(DCB02)
 	db		28h, 0eh		;SPI_FUNCTION_REG (DCB02FN)
 	db		29h, dch		;SPI_INPUT_REG    (DCB02IN)
-	db		2ah, 94h		;SPI_OUTPUT_REG   (DCB02OU)
+	db		2ah, 54h		;SPI_OUTPUT_REG   (DCB02OU)
 ;  Global Register values Bank 1
 	db		61h, 00h		; AnalogClockSelect1 register (CLK_CR1)
 	db		69h, 00h		; AnalogClockSelect2 register (CLK_CR2)
@@ -122,10 +122,10 @@ LoadConfigTBL_spimem_Ordered:
 	mov	reg[05h], 00h		; Port_1_IntEn register (PRT1IE)
 	mov	reg[08h], 00h		; Port_2_Data register (PRT2DR)
 	M8C_SetBank1
-	mov	reg[08h], 10h		; Port_2_DriveMode_0 register (PRT2DM0)
-	mov	reg[09h], efh		; Port_2_DriveMode_1 register (PRT2DM1)
+	mov	reg[08h], 90h		; Port_2_DriveMode_0 register (PRT2DM0)
+	mov	reg[09h], 6fh		; Port_2_DriveMode_1 register (PRT2DM1)
 	M8C_SetBank0
-	mov	reg[0bh], e8h		; Port_2_DriveMode_2 register (PRT2DM2)
+	mov	reg[0bh], 68h		; Port_2_DriveMode_2 register (PRT2DM2)
 	mov	reg[0ah], 17h		; Port_2_GlobalSelect register (PRT2GS)
 	M8C_SetBank1
 	mov	reg[0ah], 00h		; Port_2_IntCtrl_0 register (PRT2IC0)
