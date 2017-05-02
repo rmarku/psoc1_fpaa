@@ -20,6 +20,17 @@ export LoadConfigTBL_spimem_Bank0
 export LoadConfigTBL_spimem_Ordered
 AREA lit(rom, rel)
 LoadConfigTBL_spimem_Bank0:
+;  Instance name LPF2_1, User Module LPF2
+;       Instance name LPF2_1, Block Name FLIN(ASC10)
+	db		80h, a0h		;LPF2_1_FLIN_CR0(ASC10CR0)
+	db		81h, e0h		;LPF2_1_FLIN_CR1(ASC10CR1)
+	db		82h, 00h		;LPF2_1_FLIN_CR2(ASC10CR2)
+	db		83h, 2ch		;LPF2_1_FLIN_CR3(ASC10CR3)
+;       Instance name LPF2_1, Block Name FLOUT(ASD20)
+	db		90h, 80h		;LPF2_1_FLOUT_CR0(ASD20CR0)
+	db		91h, 00h		;LPF2_1_FLOUT_CR1(ASD20CR1)
+	db		92h, 80h		;LPF2_1_FLOUT_CR2(ASD20CR2)
+	db		93h, 20h		;LPF2_1_FLOUT_CR3(ASD20CR3)
 ;  Instance name SPI, User Module SPIS
 ;       Instance name SPI, Block Name SPIS(DCB02)
 	db		2bh, 00h		;SPI_CONTROL_REG  (DCB02CR0)
@@ -67,6 +78,9 @@ LoadConfigTBL_spimem_Bank0:
 	db		6fh, 00h		; TMP_DR3 register (TMP_DR3)
 	db		ffh
 LoadConfigTBL_spimem_Bank1:
+;  Instance name LPF2_1, User Module LPF2
+;       Instance name LPF2_1, Block Name FLIN(ASC10)
+;       Instance name LPF2_1, Block Name FLOUT(ASD20)
 ;  Instance name SPI, User Module SPIS
 ;       Instance name SPI, Block Name SPIS(DCB02)
 	db		28h, 0eh		;SPI_FUNCTION_REG (DCB02FN)
@@ -76,7 +90,7 @@ LoadConfigTBL_spimem_Bank1:
 	db		61h, 00h		; AnalogClockSelect1 register (CLK_CR1)
 	db		69h, 00h		; AnalogClockSelect2 register (CLK_CR2)
 	db		60h, 00h		; AnalogColumnClockSelect register (CLK_CR0)
-	db		62h, 00h		; AnalogIOControl_0 register (ABF_CR0)
+	db		62h, 08h		; AnalogIOControl_0 register (ABF_CR0)
 	db		67h, 33h		; AnalogLUTControl0 register (ALT_CR0)
 	db		68h, 33h		; AnalogLUTControl1 register (ALT_CR1)
 	db		63h, 00h		; AnalogModulatorControl_0 register (AMD_CR0)
