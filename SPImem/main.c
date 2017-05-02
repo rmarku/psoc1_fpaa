@@ -16,6 +16,7 @@ void main(void)
 	//    Prototypes of the SPIS_1 API.
 	//-------------------------------------------------
 	SPI_Start(SPI_SPIS_MODE_0|SPI_SPIS_MSB_FIRST);
+	LPF2_1_Start(LPF2_1_HIGHPOWER);
 	SPI_EnableInt();
 
 	PRT2DR |= 0x80 ;
