@@ -16,10 +16,9 @@ void main(void)
 	//    Prototypes of the SPIS_1 API.
 	//-------------------------------------------------
 	SPI_Start(SPI_SPIS_MODE_0|SPI_SPIS_MSB_FIRST);
-	//SPI_EnableInt();
+	SPI_EnableInt();
 
-	PRT2DR &= ~ 0x80 ; //Turns the LED On.
-	PRT2DR |= 0x80 ; //Turns the LED Off.
+	PRT2DR |= 0x80 ;
 	
 	while (TRUE){
  		SPI_SetupTxData(bData);

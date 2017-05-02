@@ -33,13 +33,13 @@ LoadConfigTBL_spimem_Bank0:
 	db		e6h, 00h		; DecimatorControl_0 register (DEC_CR0)
 	db		e7h, 00h		; DecimatorControl_1 register (DEC_CR1)
 	db		d6h, 00h		; I2CConfig register (I2C_CFG)
-	db		b0h, 00h		; Row_0_InputMux register (RDI0RI)
+	db		b0h, 3fh		; Row_0_InputMux register (RDI0RI)
 	db		b1h, 00h		; Row_0_InputSync register (RDI0SYN)
 	db		b2h, 00h		; Row_0_LogicInputAMux register (RDI0IS)
 	db		b3h, 33h		; Row_0_LogicSelect_0 register (RDI0LT0)
 	db		b4h, 33h		; Row_0_LogicSelect_1 register (RDI0LT1)
-	db		b5h, 02h		; Row_0_OutputDrive_0 register (RDI0SRO0)
-	db		b6h, 00h		; Row_0_OutputDrive_1 register (RDI0SRO1)
+	db		b5h, 00h		; Row_0_OutputDrive_0 register (RDI0SRO0)
+	db		b6h, 80h		; Row_0_OutputDrive_1 register (RDI0SRO1)
 	db		b8h, 55h		; Row_1_InputMux register (RDI1RI)
 	db		b9h, 00h		; Row_1_InputSync register (RDI1SYN)
 	db		bah, 10h		; Row_1_LogicInputAMux register (RDI1IS)
@@ -71,7 +71,7 @@ LoadConfigTBL_spimem_Bank1:
 ;       Instance name SPI, Block Name SPIS(DCB02)
 	db		28h, 0eh		;SPI_FUNCTION_REG (DCB02FN)
 	db		29h, dch		;SPI_INPUT_REG    (DCB02IN)
-	db		2ah, 54h		;SPI_OUTPUT_REG   (DCB02OU)
+	db		2ah, 57h		;SPI_OUTPUT_REG   (DCB02OU)
 ;  Global Register values Bank 1
 	db		61h, 00h		; AnalogClockSelect1 register (CLK_CR1)
 	db		69h, 00h		; AnalogClockSelect2 register (CLK_CR2)
@@ -110,11 +110,11 @@ LoadConfigTBL_spimem_Ordered:
 	mov	reg[01h], 00h		; Port_0_IntEn register (PRT0IE)
 	mov	reg[04h], 00h		; Port_1_Data register (PRT1DR)
 	M8C_SetBank1
-	mov	reg[04h], 00h		; Port_1_DriveMode_0 register (PRT1DM0)
-	mov	reg[05h], ffh		; Port_1_DriveMode_1 register (PRT1DM1)
+	mov	reg[04h], 80h		; Port_1_DriveMode_0 register (PRT1DM0)
+	mov	reg[05h], 7fh		; Port_1_DriveMode_1 register (PRT1DM1)
 	M8C_SetBank0
-	mov	reg[07h], ffh		; Port_1_DriveMode_2 register (PRT1DM2)
-	mov	reg[06h], 00h		; Port_1_GlobalSelect register (PRT1GS)
+	mov	reg[07h], 0fh		; Port_1_DriveMode_2 register (PRT1DM2)
+	mov	reg[06h], f0h		; Port_1_GlobalSelect register (PRT1GS)
 	M8C_SetBank1
 	mov	reg[06h], 00h		; Port_1_IntCtrl_0 register (PRT1IC0)
 	mov	reg[07h], 00h		; Port_1_IntCtrl_1 register (PRT1IC1)
@@ -122,11 +122,11 @@ LoadConfigTBL_spimem_Ordered:
 	mov	reg[05h], 00h		; Port_1_IntEn register (PRT1IE)
 	mov	reg[08h], 00h		; Port_2_Data register (PRT2DR)
 	M8C_SetBank1
-	mov	reg[08h], 90h		; Port_2_DriveMode_0 register (PRT2DM0)
-	mov	reg[09h], 6fh		; Port_2_DriveMode_1 register (PRT2DM1)
+	mov	reg[08h], 80h		; Port_2_DriveMode_0 register (PRT2DM0)
+	mov	reg[09h], 7fh		; Port_2_DriveMode_1 register (PRT2DM1)
 	M8C_SetBank0
-	mov	reg[0bh], 68h		; Port_2_DriveMode_2 register (PRT2DM2)
-	mov	reg[0ah], 17h		; Port_2_GlobalSelect register (PRT2GS)
+	mov	reg[0bh], 7fh		; Port_2_DriveMode_2 register (PRT2DM2)
+	mov	reg[0ah], 00h		; Port_2_GlobalSelect register (PRT2GS)
 	M8C_SetBank1
 	mov	reg[0ah], 00h		; Port_2_IntCtrl_0 register (PRT2IC0)
 	mov	reg[0bh], 00h		; Port_2_IntCtrl_1 register (PRT2IC1)
