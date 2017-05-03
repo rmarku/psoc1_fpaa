@@ -22,7 +22,7 @@ AREA lit(rom, rel)
 LoadConfigTBL_spimem_Bank0:
 ;  Instance name LPF2_1, User Module LPF2
 ;       Instance name LPF2_1, Block Name FLIN(ASC10)
-	db		80h, a1h		;LPF2_1_FLIN_CR0(ASC10CR0)
+	db		80h, 81h		;LPF2_1_FLIN_CR0(ASC10CR0)
 	db		81h, e1h		;LPF2_1_FLIN_CR1(ASC10CR1)
 	db		82h, 09h		;LPF2_1_FLIN_CR2(ASC10CR2)
 	db		83h, 2ch		;LPF2_1_FLIN_CR3(ASC10CR3)
@@ -99,7 +99,7 @@ LoadConfigTBL_spimem_Bank1:
 	db		d3h, 00h		; GlobalDigitalInterconnect_Drive_Even_Output register (GDI_E_OU)
 	db		d0h, 00h		; GlobalDigitalInterconnect_Drive_Odd_Input register (GDI_O_IN)
 	db		d2h, 00h		; GlobalDigitalInterconnect_Drive_Odd_Output register (GDI_O_OU)
-	db		e1h, ffh		; OscillatorControl_1 register (OSC_CR1)
+	db		e1h, 5fh		; OscillatorControl_1 register (OSC_CR1)
 	db		e2h, 00h		; OscillatorControl_2 register (OSC_CR2)
 	db		dfh, ffh		; OscillatorControl_3 register (OSC_CR3)
 	db		deh, 02h		; OscillatorControl_4 register (OSC_CR4)
