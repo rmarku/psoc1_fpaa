@@ -19,6 +19,6 @@
 
 #include "PSoCGPIOINT.h"
 #include "LPF2_1.h"
-#include "SPI.h"
+#include "UART.h"
 
 #endif

@@ -15,4 +15,4 @@
  
 include "PSoCGPIOINT.inc"
 include "LPF2_1.inc"
-include "SPI.inc"
+include "UART.inc"

@@ -1,0 +1,30 @@
+   push A
+   push X
+   IF SYSTEM_LARGE_MEMORY_MODEL
+      REG_PRESERVE IDX_PP
+   ENDIF
+
+   mov  A,REG[UART_RX_CONTROL_REG]              ; Read the control register
+   and  A,UART_RX_REG_FULL                      ; Did really really get an IRQ
+   jz   END_RX                                  ; If Data no ready, go out
+   
+; Recibo y guardo en el buffer
+RAM_SETPAGE_CUR >_rx_pos
+   mov  X,_rx_pos								; Leo la posicion
+RAM_SETPAGE_CUR >_rx_buffer
+   mov  A,REG[UART_RX_BUFFER_REG ]              ; Read the data buffer
+   mov  [X+_rx_buffer],A
+RAM_SETPAGE_CUR >_rx_pos
+   inc  [_rx_pos]
+   cmp  [_rx_pos],32
+   jnz INC_CONT
+   mov [_rx_pos],0
+INC_CONT:
+RAM_SETPAGE_CUR >_rx_cont
+	inc [_rx_cont]
+END_RX:
+   IF SYSTEM_LARGE_MEMORY_MODEL
+      REG_RESTORE IDX_PP
+   ENDIF   
+   pop  X
+   pop  A
