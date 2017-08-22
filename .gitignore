@@ -5,7 +5,6 @@ project.dep
 project.dep.bak
 project.mk
 
-*.cmx
 *.hex
 *.a
 *.o
